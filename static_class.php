@@ -1,13 +1,37 @@
 <?php
 //
+var_dump( __DIR__ );
+var_dump( __FILE__ );
+
+//ファイルの読み込み
+require_once( __DIR__ . "/static_class.php" );
+//
 class Hoge
 {
+    //
+    private static $静的プロパティ;
+    
     //
     public static function 静的なメソッド()
     {
         echo "静的なメソッド　\n";
     }
+
+
+    //
+    public static function set静的プロパティ($v)
+    {
+        static :: $静的プロパティ = $v;
+    }
+    //
+    public static function get静的プロパティ()
+    {
+        return static :: $静的プロパティ;
+    }
 }
 
 //
 Hoge :: 静的なメソッド();
+//
+Hoge :: set静的プロパティ("set string");
+echo Hoge :: get静的プロパティ() , "\n";
