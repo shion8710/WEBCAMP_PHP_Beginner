@@ -1,10 +1,11 @@
 <?php
-echo "0";
 
 $a = 1;
 $i = 0;
 
-while(1){
+echo "{$i} \n";
+
+while($i < 10000){
     $s =($a + $i);
     
     echo "{$s} \n";
